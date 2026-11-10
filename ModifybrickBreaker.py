@@ -384,7 +384,7 @@ class Game(tk.Frame):
             powerup.move(0, powerup.speed)
             coords = powerup.get_position()
             caught = (coords[2] >= paddle_coords[0] and coords[0] <= paddle_coords[2]
-                      and coords[3] >= paddle_coords[1] and coords[1] <= paddle_coords[3])
+                    and coords[3] >= paddle_coords[1] and coords[1] <= paddle_coords[3])
             if caught:
                 powerup.delete()
                 self.powerups.pop(item, None)
@@ -437,7 +437,7 @@ class Game(tk.Frame):
             ball_coords = ball.get_position()
             items = self.canvas.find_overlapping(*ball_coords)
             objects = [self.items[item] for item in items
-                       if item in self.items and isinstance(self.items[item], Brick)]
+                    if item in self.items and isinstance(self.items[item], Brick)]
             destroyed_bricks = ball.collide(objects)
             for x, y in destroyed_bricks:
                 self.spawn_powerup(x, y)
